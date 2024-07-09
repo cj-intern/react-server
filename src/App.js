@@ -40,7 +40,7 @@ function App() {
       <Routes>
         <Route path="/health-check" element={<HealthCheck />}/>
         <Route path="/" element={<MainPage setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="/products" element={<ProductPage />} />
+        <Route path="/product" element={<ProductPage />} />
         <Route path="/login" element={<MainPage setIsAuthenticated={setIsAuthenticated} />} />
         <Route path='/sign-up' element={<CustomSignUp />}  />
       </Routes>

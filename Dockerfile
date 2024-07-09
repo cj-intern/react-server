@@ -1,4 +1,4 @@
-FROM node:22-alpine as build
+FROM node:22-alpine
 
 WORKDIR /app
 
@@ -6,14 +6,9 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY src/ src/
-COPY public/ public/
+COPY ./src ./src
+COPY ./public ./public
 
-RUN npm run build
+WORKDIR /app/src
 
-
-FROM nginx:alpine
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/build /usr/share/nginx/html
-EXPOSE 5050
-CMD ["nginx", "-g", "daemon off;"]
+CMD npm start

@@ -1,10 +1,10 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:634371522187:task-definition/intern-front-service:2",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:634371522187:task-definition/intern-front-service:8",
     "containerDefinitions": [
         {
             "name": "front-service",
-            "image": "634371522187.dkr.ecr.ap-northeast-2.amazonaws.com/intern-front:8d91f6a8bc985defeab6aa46a9ca4145ba481def",
-            "cpu": 0,
+            "image": "634371522187.dkr.ecr.ap-northeast-2.amazonaws.com/intern-front:c834f80d6cb380184a21119433bb132ea44a13f9",
+            "cpu": 512,
             "portMappings": [
                 {
                     "name": "front-service-5050-tcp",
@@ -36,8 +36,8 @@
     "family": "intern-front-service",
     "taskRoleArn": "arn:aws:iam::634371522187:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::634371522187:role/ecsTaskExecutionRole",
-    "networkMode": "awsvpc",
-    "revision": 2,
+    "networkMode": "bridge",
+    "revision": 8,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -63,27 +63,23 @@
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
         },
         {
-            "name": "ecs.capability.task-eni"
-        },
-        {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
     "placementConstraints": [],
     "compatibilities": [
-        "EC2",
-        "FARGATE"
+        "EC2"
     ],
     "requiresCompatibilities": [
         "EC2"
     ],
-    "cpu": "1024",
+    "cpu": "512",
     "memory": "3072",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-07-09T05:55:56.727Z",
+    "registeredAt": "2024-07-09T08:17:41.968Z",
     "registeredBy": "arn:aws:iam::634371522187:user/rlwjddl234@cj.net",
     "tags": []
 }

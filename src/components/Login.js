@@ -5,12 +5,13 @@ import { useNavigate } from 'react-router-dom';
 
 function Login({ signOut, user }) {
   const navigate = useNavigate();
-
+  navigate('/main');
+  
   useEffect(() => {
     if (user) {
-      navigate('/'); // Redirect to the main page after login
+      navigate('/main'); // Redirect to the main page after login
     }
-  }, [user, navigate]);
+  }, []);
 
   return (
     <div>

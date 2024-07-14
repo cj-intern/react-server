@@ -4,7 +4,7 @@ import { Auth } from 'aws-amplify';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';  // Import the CSS file for the header
 
-function Header({ userName }) {
+function Header({ userName, isAuthenticated }) {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -22,11 +22,12 @@ function Header({ userName }) {
       <nav className="nav">
         <div className="nav-left">
           <a href="/" className="nav-link">Home</a>
-          <a href="/products" className="nav-link">Products</a>
+          <a href="/product" className="nav-link">Product</a>
+          <a href="/order" className="nav-link">Orders</a>
         </div>
         <div className="nav-right">
-          <h1 className="welcome-message">Welcome, {userName && `${userName}님`}</h1>
-          <button onClick={handleLogout} className="logout-button">Logout</button>
+          {isAuthenticated && <h1 className="welcome-message">Welcome, {userName && `${userName}님`}</h1>}
+          {isAuthenticated && <button onClick={handleLogout} className="logout-button">Logout</button>}
         </div>
       </nav>
     </header>

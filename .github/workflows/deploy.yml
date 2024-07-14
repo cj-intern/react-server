@@ -11,7 +11,7 @@ env:
   # Note the ARNs are not needed here
   ECR_REPOSITORY: intern-front
   ECS_SERVICE: front-service
-  ECS_CLUSTER: intern-front-service
+  ECS_CLUSTER: intern-final-ecs
   ECS_TASK_DEFINITION: intern-front-service-revision1-AWS-CLI-input.json
   CONTAINER_NAME: front-service
 jobs:

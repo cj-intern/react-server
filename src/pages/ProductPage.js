@@ -1,11 +1,12 @@
 // src/pages/ProductPage.js
 import React, { useState, useEffect } from 'react';
 import { Auth } from 'aws-amplify';
+import './ProductPage.css'; // CSS 파일을 추가해서 스타일을 적용합니다.
 
 function ProductPage() {
   const [products, setProducts] = useState([]);
-
   const [email, setemail] = useState('');
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -52,7 +53,7 @@ function ProductPage() {
       })
       
       console.log(orderData)
-      const response = await fetch('http://intern-order-13953906.ap-northeast-2.elb.amazonaws.com/order', {
+      const response = await fetch('https://ecommerce.p-e.kr/order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +77,13 @@ function ProductPage() {
           <div key={product.productId} className="product-item">
             <img src={product.link} alt={product.productName} />
             <h3>{product.productName}</h3>
-            <p>{product.price}</p>
+            <p><strong>Price:</strong> {product.price} 원</p>
+            <p><strong>Moisture:</strong> {product.moisture}</p>
+            <p><strong>Sensitivity:</strong> {product.sensitivity}</p>
+            <p><strong>Texture:</strong> {product.texture}</p>
+            <p><strong>Acne Care:</strong> {product.acneCare}</p>
+            <p><strong>Wrinkle Care:</strong> {product.wrinkle_care}</p>
+            <p><strong>Whitening:</strong> {product.whitening}</p>
             <button onClick={() => handleOrder(product.productId)}>Order</button>
           </div>
         ))}

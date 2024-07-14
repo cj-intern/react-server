@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:634371522187:task-definition/intern-front-service:8",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:634371522187:task-definition/intern-front-service:12",
     "containerDefinitions": [
         {
             "name": "front-service",
-            "image": "634371522187.dkr.ecr.ap-northeast-2.amazonaws.com/intern-front:c834f80d6cb380184a21119433bb132ea44a13f9",
+            "image": "634371522187.dkr.ecr.ap-northeast-2.amazonaws.com/intern-front:cb1dd7311e10ce2d3e3685e2a572e8f966282a26",
             "cpu": 512,
             "portMappings": [
                 {
@@ -16,10 +16,8 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -37,7 +35,7 @@
     "taskRoleArn": "arn:aws:iam::634371522187:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::634371522187:role/ecsTaskExecutionRole",
     "networkMode": "bridge",
-    "revision": 8,
+    "revision": 12,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -60,9 +58,6 @@
             "name": "ecs.capability.execution-role-ecr-pull"
         },
         {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
@@ -79,7 +74,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-07-09T08:17:41.968Z",
+    "registeredAt": "2024-07-14T12:12:51.738Z",
     "registeredBy": "arn:aws:iam::634371522187:user/rlwjddl234@cj.net",
     "tags": []
 }

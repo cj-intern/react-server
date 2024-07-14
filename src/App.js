@@ -36,7 +36,7 @@ function App() {
         });
     }
   }, [navigate]);
-
+    
   return (
     <div>
       {<Header userName={userName} isAuthenticated={isAuthenticated} />}

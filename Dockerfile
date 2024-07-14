@@ -11,4 +11,4 @@ COPY ./public ./public
 
 WORKDIR /app/src
 
-CMD npm start
+CMD nohup npm start

@@ -30,7 +30,7 @@ const OrdersPage = () => {
                         Authorization: `Bearer ${token}`
                     }
                 });
-                console.log(response.json())
+              
                 const data = await response.json();
                 const orderMap = new Map();
                 for (const order of data) {

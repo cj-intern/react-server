@@ -23,7 +23,7 @@ function Header({ userName, isAuthenticated }) {
         <div className="nav-left">
           <a href="/" className="nav-link">Home</a>
           <a href="/product" className="nav-link">Product</a>
-          <a href="/order" className="nav-link">Orders</a>
+          <a href="/orders" className="nav-link">Orders</a>
         </div>
         <div className="nav-right">
           {isAuthenticated && <h1 className="welcome-message">Welcome, {userName && `${userName}님`}</h1>}

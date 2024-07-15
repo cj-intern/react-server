@@ -44,7 +44,7 @@ function App() {
         <Route path="/health-check" element={<HealthCheck />}/>
         <Route path="/" element={<MainPage setIsAuthenticated={setIsAuthenticated} />} />
         <Route path="/product" element={<ProductPage />} />
-        <Route path='/Order' element={<OrdersPage />}  />
+        <Route path='/Orders' element={<OrdersPage />}  />
       </Routes>
     </div>
   );

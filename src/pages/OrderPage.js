@@ -14,6 +14,7 @@ const OrdersPage = () => {
         Auth.currentAuthenticatedUser()
           .then(user => {
             setEmail(user.attributes.email);
+            setIsAuthenticated(true)
           })
           .catch(() => setIsAuthenticated(false));
       }, []);
@@ -23,13 +24,13 @@ const OrdersPage = () => {
             try {
                 const session = await Auth.currentSession();
                 const token = session.getIdToken().getJwtToken();
-                const response = await fetch(`https://ecommerce.p-e.kr/order/${email}`, {
+                const response = await fetch(`http://intern-final-alb-724647037.ap-northeast-2.elb.amazonaws.com:3030/order/${email}` , {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
                 });
+        
                 const data = await response.json();
-
                 const orderMap = new Map();
                 for (const order of data) {
                     const key = `${order.name}-${order.productName}-${order.price}-${order.address}`;
@@ -40,7 +41,7 @@ const OrdersPage = () => {
                         orderMap.set(key, { ...order, number: existingOrder.number + 1 });
                     }
                 }
-                console.log(Array.from(orderMap.values()))
+                //console.log(Array.from(orderMap.values()))
                 setOrders(Array.from(orderMap.values()));
             } catch (error) {
                 console.error('Error fetching orders:', error);
@@ -48,7 +49,7 @@ const OrdersPage = () => {
         };
 
         fetchOrders();
-    }, [email]);
+    }, [email, isAuthenticated]);
 
     return (
         <div className="orders-page">

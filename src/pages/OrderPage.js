@@ -24,12 +24,13 @@ const OrdersPage = () => {
             try {
                 const session = await Auth.currentSession();
                 const token = session.getIdToken().getJwtToken();
-                const response = await fetch(`http://intern-final-alb-724647037.ap-northeast-2.elb.amazonaws.com:3030/order/${email}` , {
+                //console.log(`http://intern-final-alb-724647037.ap-northeast-2.elb.amazonaws.com:3030/order/${email}`)
+                const response = await fetch(`https://ecommerce.p-e.kr/order/${email}` , {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
                 });
-        
+                console.log(response.json())
                 const data = await response.json();
                 const orderMap = new Map();
                 for (const order of data) {

@@ -1,10 +1,10 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:634371522187:task-definition/intern-front-service:12",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:634371522187:task-definition/intern-front-service:23",
     "containerDefinitions": [
         {
             "name": "front-service",
-            "image": "634371522187.dkr.ecr.ap-northeast-2.amazonaws.com/intern-front:cb1dd7311e10ce2d3e3685e2a572e8f966282a26",
-            "cpu": 512,
+            "image": "634371522187.dkr.ecr.ap-northeast-2.amazonaws.com/intern-front:f5cd83bb31ec67e5eddb94a3cf9d1410c9fa1cb4",
+            "cpu": 410,
             "portMappings": [
                 {
                     "name": "front-service-5050-tcp",
@@ -35,7 +35,7 @@
     "taskRoleArn": "arn:aws:iam::634371522187:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::634371522187:role/ecsTaskExecutionRole",
     "networkMode": "bridge",
-    "revision": 12,
+    "revision": 23,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -68,13 +68,13 @@
     "requiresCompatibilities": [
         "EC2"
     ],
-    "cpu": "512",
+    "cpu": "410",
     "memory": "3072",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-07-14T12:12:51.738Z",
+    "registeredAt": "2024-07-17T05:04:58.894Z",
     "registeredBy": "arn:aws:iam::634371522187:user/rlwjddl234@cj.net",
     "tags": []
 }

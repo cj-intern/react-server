@@ -23,7 +23,7 @@ const OrdersPage = () => {
         const fetchOrders = async () => {
             try {
                 const session = await Auth.currentSession();
-                const token = session.getIdToken().getJwtToken();
+                const token = session.getIdToken().getJwtToken()
                 //console.log(`http://intern-final-alb-724647037.ap-northeast-2.elb.amazonaws.com:3030/order/${email}`)
                 const response = await fetch(`https://ecommerce.p-e.kr/order/${email}` , {
                     headers: {

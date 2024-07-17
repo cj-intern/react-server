@@ -6,8 +6,8 @@ const awsConfig = {
     oauth: {
       domain: 'intern-user-pool.auth.ap-northeast-2.amazoncognito.com',
       scope: ['phone', 'email', 'openid', 'profile', 'aws.cognito.signin.user.admin'],
-      redirectSignIn: 'http://localhost:3000/',
-      redirectSignOut: 'http://localhost:3000/',
+      redirectSignIn: 'https://ecommerce.p-e.kr/',
+      redirectSignOut: 'https://ecommerce.p-e.kr/',
       responseType: 'code' // or 'token'
     }
   }
